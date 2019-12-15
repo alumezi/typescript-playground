@@ -1,4 +1,4 @@
-type bankAccountTsc = { money: number, deposit: (value: number) => void }; 
+type bankAccountTsc = { money: number, deposit: (value: number) => void };
 
 let bankAccount: bankAccountTsc = {
     money: 2000,
@@ -14,5 +14,14 @@ let myself: { name: string, bankAccount: bankAccountTsc, hobbies: string[] } = {
 };
 
 myself.bankAccount.deposit(3000);
+
+function func(a: number, b: number) { //strict null checks for c
+    let c = 0;
+    if (a) {
+        c = 2;
+    }
+
+    return a + b + c;
+}
 
 console.log(myself);

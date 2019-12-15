@@ -11,4 +11,11 @@ var myself = {
     hobbies: ["Sports", "Cooking"]
 };
 myself.bankAccount.deposit(3000);
+function func(a, b) {
+    var c = 0;
+    if (a) {
+        c = 2;
+    }
+    return a + b + c;
+}
 console.log(myself);
