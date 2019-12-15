@@ -61,3 +61,22 @@ var Arbnor1 = new Arbnor(24);
 Arbnor1.setAge(25);
 // console.log("TCL: Katie", Katie)
 // console.log("TCL: Katie", Arbnor1)
+
+//singleton example
+
+class Singleton {
+    private static instance: Singleton;
+
+    private constructor(public name: string) { }
+
+    static getInstance() {
+        if (!Singleton.instance) {
+            Singleton.instance = new Singleton('The Singleton');
+        }
+        return Singleton.instance;
+    }
+}
+
+let theSingletonInstance = Singleton.getInstance(); //can only be initialized this way and only with name The Singleton
+
+console.log(theSingletonInstance);
