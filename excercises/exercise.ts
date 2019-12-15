@@ -13,7 +13,6 @@ let myself: { name: string, bankAccount: bankAccountTsc, hobbies: string[] } = {
     hobbies: ["Sports", "Cooking"]
 };
 
-myself.bankAccount.deposit(3000);
 
 function func(a: number, b: number) { //strict null checks for c
     let c = 0;
@@ -24,4 +23,4 @@ function func(a: number, b: number) { //strict null checks for c
     return a + b + c;
 }
 
-console.log(myself);
+export default myself;

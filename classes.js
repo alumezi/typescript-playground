@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -23,6 +22,7 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
+export { Person };
 var Arbnor = /** @class */ (function (_super) {
     __extends(Arbnor, _super);
     function Arbnor(age) {
@@ -30,6 +30,7 @@ var Arbnor = /** @class */ (function (_super) {
     }
     return Arbnor;
 }(Person));
+export { Arbnor };
 var Engine = /** @class */ (function () {
     function Engine() {
         this.engineType = "v20";
@@ -65,16 +66,7 @@ var Car = /** @class */ (function (_super) {
     });
     return Car;
 }(Engine));
-var Tezlah = new Car();
-Tezlah.setter = "Model S";
-console.log(Tezlah.getter);
-Tezlah.changeType("v30");
-console.log(Tezlah.engineType);
-var Katie = new Person("Katie", 23);
-var Arbnor1 = new Arbnor(24);
-Arbnor1.setAge(25);
-// console.log("TCL: Katie", Katie)
-// console.log("TCL: Katie", Arbnor1)
+export { Car };
 //singleton example
 var Singleton = /** @class */ (function () {
     function Singleton(name) {
@@ -88,5 +80,4 @@ var Singleton = /** @class */ (function () {
     };
     return Singleton;
 }());
-var theSingletonInstance = Singleton.getInstance(); //can only be initialized this way and only with name The Singleton
-console.log(theSingletonInstance);
+export { Singleton };

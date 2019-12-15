@@ -1,4 +1,3 @@
-"use strict";
 var bankAccount = {
     money: 2000,
     deposit: function (value) {
@@ -10,7 +9,6 @@ var myself = {
     bankAccount: bankAccount,
     hobbies: ["Sports", "Cooking"]
 };
-myself.bankAccount.deposit(3000);
 function func(a, b) {
     var c = 0;
     if (a) {
@@ -18,4 +16,4 @@ function func(a, b) {
     }
     return a + b + c;
 }
-console.log(myself);
+export default myself;

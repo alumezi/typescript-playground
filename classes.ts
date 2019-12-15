@@ -13,7 +13,9 @@ class Person {
     }
 }
 
-class Arbnor extends Person {
+export { Person };
+
+export class Arbnor extends Person {
     constructor(age: number) {
         super("Arbnor", age)
     }
@@ -29,7 +31,7 @@ abstract class Engine {
     }
 }
 
-class Car extends Engine {
+export class Car extends Engine {
     private model: string = "";
 
     changeType(name: string): void {
@@ -45,29 +47,12 @@ class Car extends Engine {
     }
 }
 
-
-var Tezlah = new Car();
-Tezlah.setter = "Model S";
-console.log(
-    Tezlah.getter
-)
-Tezlah.changeType("v30")
-console.log(
-    Tezlah.engineType
-)
-
-var Katie = new Person("Katie", 23);
-var Arbnor1 = new Arbnor(24);
-Arbnor1.setAge(25);
-// console.log("TCL: Katie", Katie)
-// console.log("TCL: Katie", Arbnor1)
-
 //singleton example
 
-class Singleton {
+export class Singleton {
     private static instance: Singleton;
 
-    private constructor(public name: string) { }
+    private constructor(public readonly name: string) { }
 
     static getInstance() {
         if (!Singleton.instance) {
@@ -76,7 +61,3 @@ class Singleton {
         return Singleton.instance;
     }
 }
-
-let theSingletonInstance = Singleton.getInstance(); //can only be initialized this way and only with name The Singleton
-
-console.log(theSingletonInstance);
