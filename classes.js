@@ -30,8 +30,31 @@ var Arbnor = /** @class */ (function (_super) {
     }
     return Arbnor;
 }(Person));
+var Car = /** @class */ (function () {
+    function Car() {
+        this.model = "";
+    }
+    Object.defineProperty(Car.prototype, "getter", {
+        get: function () {
+            return this.model;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Car.prototype, "setter", {
+        set: function (model) {
+            this.model = model;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Car;
+}());
+var Tezlah = new Car();
+Tezlah.setter = "Model S";
+console.log(Tezlah.getter);
 var Katie = new Person("Katie", 23);
 var Arbnor1 = new Arbnor(24);
 Arbnor1.setAge(25);
-console.log("TCL: Katie", Katie);
-console.log("TCL: Katie", Arbnor1);
+// console.log("TCL: Katie", Katie)
+// console.log("TCL: Katie", Arbnor1)
