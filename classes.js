@@ -30,10 +30,25 @@ var Arbnor = /** @class */ (function (_super) {
     }
     return Arbnor;
 }(Person));
-var Car = /** @class */ (function () {
-    function Car() {
-        this.model = "";
+var Engine = /** @class */ (function () {
+    function Engine() {
+        this.engineType = "v20";
     }
+    Engine.prototype.turnOn = function () {
+        return "Engine " + this.engineType + " is on";
+    };
+    return Engine;
+}());
+var Car = /** @class */ (function (_super) {
+    __extends(Car, _super);
+    function Car() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.model = "";
+        return _this;
+    }
+    Car.prototype.changeType = function (name) {
+        this.engineType = name;
+    };
     Object.defineProperty(Car.prototype, "getter", {
         get: function () {
             return this.model;
@@ -49,10 +64,12 @@ var Car = /** @class */ (function () {
         configurable: true
     });
     return Car;
-}());
+}(Engine));
 var Tezlah = new Car();
 Tezlah.setter = "Model S";
 console.log(Tezlah.getter);
+Tezlah.changeType("v30");
+console.log(Tezlah.engineType);
 var Katie = new Person("Katie", 23);
 var Arbnor1 = new Arbnor(24);
 Arbnor1.setAge(25);

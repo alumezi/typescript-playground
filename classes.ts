@@ -19,8 +19,22 @@ class Arbnor extends Person {
     }
 }
 
-class Car {
+abstract class Engine {
+    engineType: String = "v20";
+
+    abstract changeType(name: string): void;
+
+    turnOn() {
+        return `Engine ${this.engineType} is on`
+    }
+}
+
+class Car extends Engine {
     private model: string = "";
+
+    changeType(name: string): void {
+        this.engineType = name;
+    }
 
     get getter() {
         return this.model;
@@ -37,8 +51,10 @@ Tezlah.setter = "Model S";
 console.log(
     Tezlah.getter
 )
-
-
+Tezlah.changeType("v30")
+console.log(
+    Tezlah.engineType
+)
 
 var Katie = new Person("Katie", 23);
 var Arbnor1 = new Arbnor(24);
