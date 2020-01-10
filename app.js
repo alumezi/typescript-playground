@@ -1,5 +1,6 @@
-import { Person, Arbnor, Car, Singleton } from "./classes.js";
+import { Person, Arbnor, Car as Vehicle, Singleton } from "./classes.js";
 import myself from "./excercises/exercise.js";
+import { Car } from "./excercises/exercise_2.js";
 //typescript basics
 var a = 2;
 var b;
@@ -25,7 +26,7 @@ function throwErr() {
     throw new Error("Asd");
 }
 var theSingletonInstance = Singleton.getInstance(); //can only be initialized this way and only with name The Singleton
-var Tezlah = new Car();
+var Tezlah = new Vehicle();
 Tezlah.setter = "Model S";
 Tezlah.changeType("v30");
 var Katie = new Person("Katie", 23);
@@ -40,4 +41,9 @@ console.log("TCL: Katie", Katie);
 console.log("TCL: Katie", Arbnor1);
 console.log(theSingletonInstance);
 console.log(myself.bankAccount.money);
-console.log(throwErr());
+console.log("---------------------------");
+var BMW = new Car("BMW");
+BMW.honk();
+console.log(BMW.acceleration);
+BMW.accelerate(10);
+console.log(BMW.acceleration);
